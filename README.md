@@ -1,4 +1,5 @@
 ```cpp
+
 #include <iostream>
 using namespace std;
 
@@ -31,7 +32,7 @@ int main()
             if (amount < balance)
             {
                 balance -= amount;
-                cout << " withdrawn balance is: " << amount << "pkr" << endl;
+                cout << " withdrawn amount is: " << amount << "pkr" << endl;
                 cout << " your remaning balance is " << balance << "pkr" << endl;
             }
 
@@ -46,7 +47,7 @@ int main()
             cout << " Enter amount for cash deposit " << endl;
             cin >> deposit;
             balance += deposit;
-            cout << " cash deposit successfully " << endl;
+            cout << " cash deposit amount is  " << deposit << "pkr" << endl;
             cout << " new balance is " << balance << "pkr" << endl;
             break;
 
@@ -61,9 +62,9 @@ int main()
         cout << "\nDo you want to perform another transction (y/n): ";
         cin >> again;
 
-        cout << " ***Thank you for using this ATM*** " << endl;
-
     } while (again == 'y' || again == 'Y');
+
+    cout << " ***Thank you for using this ATM*** " << endl;
 
     return 0;
 }
