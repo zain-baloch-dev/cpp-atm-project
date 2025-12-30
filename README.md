@@ -9,6 +9,33 @@ int main()
     int choice;
     char again;
 
+    // PIN variables
+    int stored_pin = 1234; // Aapka default PIN
+    int input_pin, attempts = 0;
+
+    // PIN Validation (3 attempts allow karte hain)
+    while (attempts < 3)
+    {
+        cout << "Enter your 4-digit PIN: ";
+        cin >> input_pin;
+        if (input_pin == stored_pin)
+        {
+            cout << " ACCESS GRANTED " << endl;
+            break;
+        }
+        else
+        {
+            attempts++;
+            cout << "Incorrect PIN. Attempts left: " << (3 - attempts) << endl;
+        }
+
+        if (attempts == 3)
+        {
+            cout << "Too many incorrect attempts. Your card is blocked!" << endl;
+            return 0; // Program yahin khatam ho jayega
+        }
+    }
+
     do
     {
         cout << " ***WELCOME TO ATM*** " << endl;
@@ -62,11 +89,12 @@ int main()
         cout << "\nDo you want to perform another transction (y/n): ";
         cin >> again;
 
-    } while (again == 'y' || again == 'Y');
+    } while (again == 'y' || again == 'y');
 
     cout << " ***Thank you for using this ATM*** " << endl;
 
     return 0;
 }
+
 
 ```
